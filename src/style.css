@@ -1,0 +1,170 @@
+.container {
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #312e38;
+  border-radius: 10px;
+  max-width: 800px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+}
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-input {
+  border: 1px solid #c9c9c9;
+  padding: 8px;
+  border-radius: 10px;
+  font-family: "Comfortaa", cursive;
+  width: 100%;
+  transition: box-shadow 0.3s ease;
+}
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px #ececec;
+}
+.search-icon {
+  position: absolute;
+  margin-left: 350px;
+  color: #c9c9c9;
+}
+.search-input:hover {
+  box-shadow: 0 4px 8px 0 rgba(129, 129, 129, 0.2);
+}
+
+.homeButton {
+  display: flex;
+  color: #666666;
+  padding: 10px;
+  border: 1px solid #efefef;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 25px;
+  transition: box-shadow 0.3s ease, background-color 0.2s ease;
+}
+
+.homeButton:hover {
+  box-shadow: 0 4px 8px 0 rgba(148, 148, 148, 0.2);
+}
+.homeButton:active {
+  background-color: #d4d4d4;
+  scale: 95%;
+}
+.main-info {
+  margin-top: 10px;
+}
+.city-temperature-current {
+  max-width: 110px;
+  font-family: "Share Tech Mono", monospace;
+  margin-left: 25px;
+  margin-right: 15px;
+  line-height: 1.3;
+  margin-top: 17px;
+  padding: 0;
+}
+.cityCurrent {
+  font-size: 27px;
+  word-break: break-word;
+}
+.temperatureToday {
+  font-size: 55px;
+  font-weight: 500;
+  display: flex;
+  margin-left: -3px;
+}
+.changeTempLink {
+  text-decoration: none;
+}
+.changeTemp {
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 6px;
+}
+.borderTemp {
+  margin-left: 5px;
+}
+.changeTempF {
+  color: #b1b1b1;
+}
+
+.date-temperature-current {
+  margin-top: 20px;
+  margin-left: 15px;
+  font-family: "Comfortaa", cursive;
+  border-left: 1px solid #d6d6d7;
+  max-height: 95px;
+}
+.dateCurrent {
+  font-size: 16px;
+  max-width: 120px;
+}
+.morning-evening-temperature {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #858585;
+}
+
+.current-status {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 20px;
+  border-right: 1px solid #d6d6d7;
+  max-height: 95px;
+}
+.fa-sun {
+  font-size: 65px;
+}
+.temperature-status {
+  font-size: 18px;
+  font-family: "Comfortaa", cursive;
+  margin-top: 5px;
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.additional-info {
+  margin-top: 20px;
+  font-family: "Comfortaa", cursive;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #858585;
+  margin-right: 5px;
+}
+.week-forecast {
+  margin-top: 40px;
+}
+.weekday {
+  font-family: "Share Tech Mono", monospace;
+  font-weight: 500;
+}
+.forecast-icon {
+  margin-top: 20px;
+  font-size: 50px;
+}
+.forecast-text {
+  margin-top: 30px;
+  font-family: "Comfortaa", cursive;
+}
+.evening-temperature {
+  color: #b1b1b1;
+}
+
+.clicked {
+  color: black;
+}
