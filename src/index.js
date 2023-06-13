@@ -36,11 +36,25 @@ function searchCity(event) {
 
   let searchInput = document.querySelector("#city-search");
   let cityCurrent = document.querySelector(".cityCurrent");
-  cityCurrent.innerHTML = `${searchInput.value}`;
+
+  if (searchInput.value.trim() === "") {
+    alert("Enter a city!🙄");
+    return false;
+  }
   let apiKey = "84a3odd1fb91cb0984343bb2db506t7f";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${searchInput.value}&key=${apiKey}&units=metric`;
-  axios.get(`${apiUrl}`).then(getWeather);
+  // axios.get(`${apiUrl}`).then(getWeather);
+  axios.get(`${apiUrl}`).then((response) => {
+    if (response.data.status === "not_found") {
+      alert("This city does not exist 😭");
+      return false;
+    } else {
+      getWeather(response);
+      cityCurrent.innerHTML = `${searchInput.value.trim()}`;
+    }
+  });
 }
+
 function getWeather(response) {
   console.log(response.data);
   let temperature = Math.round(response.data.temperature.current);
