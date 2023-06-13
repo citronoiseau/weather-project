@@ -37,29 +37,33 @@ function searchCity(event) {
   let searchInput = document.querySelector("#city-search");
   let cityCurrent = document.querySelector(".cityCurrent");
   cityCurrent.innerHTML = `${searchInput.value}`;
-  let apiKey = "58a6775f97527351bf6c6966e209be39";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&units=metric`;
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(getWeather);
+  let apiKey = "84a3odd1fb91cb0984343bb2db506t7f";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${searchInput.value}&key=${apiKey}&units=metric`;
+  axios.get(`${apiUrl}`).then(getWeather);
 }
 function getWeather(response) {
   console.log(response.data);
-  let temperature = Math.round(response.data.main.temp);
+  let temperature = Math.round(response.data.temperature.current);
   let temperatureCity = document.querySelector("#temperatureValue");
   temperatureCity.innerHTML = `${temperature}`;
 
-  let temperatureMax = Math.round(response.data.main.temp_max);
-  let tempMax = document.querySelector("#tempMax");
-  tempMax.innerHTML = `${temperatureMax}°`;
+  let city = response.data.city;
+  let currentCity = document.querySelector(".cityCurrent");
+  currentCity.innerHTML = `${city}`;
+  //will work on tempmax and tempmin when added an API for week forecast
+  // let temperatureMax = Math.round(response.data.main.temp_max);
+  // let tempMax = document.querySelector("#tempMax");
+  // tempMax.innerHTML = `${temperatureMax}°`;
 
-  let temperatureMin = Math.round(response.data.main.temp_min);
-  let tempMin = document.querySelector("#tempMin");
-  tempMin.innerHTML = `${temperatureMin}°`;
+  // let temperatureMin = Math.round(response.data.main.temp_min);
+  // let tempMin = document.querySelector("#tempMin");
+  // tempMin.innerHTML = `${temperatureMin}°`;
 
-  let feelsLike = Math.round(response.data.main.feels_like);
+  let feelsLike = Math.round(response.data.temperature.feels_like);
   let feel = document.querySelector("#feelsLikeTemp");
   feel.innerHTML = `${feelsLike}°`;
 
-  let humidity = Math.round(response.data.main.humidity);
+  let humidity = Math.round(response.data.temperature.humidity);
   let hum = document.querySelector("#humidity");
   hum.innerHTML = `${humidity}%`;
 
@@ -67,15 +71,14 @@ function getWeather(response) {
   let windSpeed = document.querySelector("#wind");
   windSpeed.innerHTML = `${wind} `;
 
-  let weather = response.data.weather[0].description;
+  let weather = response.data.condition.description;
   let weatherDescription = document.querySelector(".temperature-status");
   weatherDescription.innerHTML = `${weather}`;
 }
 
-let apiKey = "58a6775f97527351bf6c6966e209be39";
-let apiUrl =
-  "https://api.openweathermap.org/data/2.5/weather?q=Kharkiv&units=metric";
-axios.get(`${apiUrl}&appid=${apiKey}`).then(getWeather);
+let apiKey = "84a3odd1fb91cb0984343bb2db506t7f";
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Kharkiv&key=${apiKey}&units=metric`;
+axios.get(`${apiUrl}`).then(getWeather);
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
@@ -85,47 +88,14 @@ function userLocation() {
 }
 
 function showPosition(position) {
-  let apiKey = "58a6775f97527351bf6c6966e209be39";
-  let apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
+  let apiKey = "84a3odd1fb91cb0984343bb2db506t7f";
+  let apiUrl = "https://api.shecodes.io/weather/v1/current?";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   axios
-    .get(`${apiUrl}lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
-    .then(showTemp);
+    .get(`${apiUrl}lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`)
+    .then(getWeather);
 }
-function showTemp(response) {
-  console.log(response.data);
-  let city = response.data.name;
-  let currentCity = document.querySelector(".cityCurrent");
-  currentCity.innerHTML = `${city}`;
 
-  let temperature = Math.round(response.data.main.temp);
-  let temperatureCity = document.querySelector("#temperatureValue");
-  temperatureCity.innerHTML = `${temperature}`;
-
-  let temperatureMax = Math.round(response.data.main.temp_max);
-  let tempMax = document.querySelector("#tempMax");
-  tempMax.innerHTML = `${temperatureMax}°`;
-
-  let temperatureMin = Math.round(response.data.main.temp_min);
-  let tempMin = document.querySelector("#tempMin");
-  tempMin.innerHTML = `${temperatureMin}°`;
-
-  let feelsLike = Math.round(response.data.main.feels_like);
-  let feel = document.querySelector("#feelsLikeTemp");
-  feel.innerHTML = `${feelsLike}°`;
-
-  let humidity = Math.round(response.data.main.humidity);
-  let hum = document.querySelector("#humidity");
-  hum.innerHTML = `${humidity}%`;
-
-  let wind = Math.round(response.data.wind.speed);
-  let windSpeed = document.querySelector("#wind");
-  windSpeed.innerHTML = `${wind} `;
-
-  let weather = response.data.weather[0].description;
-  let weatherDescription = document.querySelector(".temperature-status");
-  weatherDescription.innerHTML = `${weather}`;
-}
 let button = document.querySelector(".homeButton");
 button.addEventListener("click", userLocation);
