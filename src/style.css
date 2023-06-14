@@ -101,14 +101,14 @@
 }
 
 .date-temperature-current {
-  margin-top: 24px;
-  margin-left: 15px;
+  margin-top: 25px;
+  margin-left: 180px;
   font-family: "Comfortaa", cursive;
   max-height: 95px;
 }
 .dateCurrent {
   font-size: 16px;
-  max-width: 120px;
+  max-width: 100px;
 }
 .morning-evening-temperature {
   margin-top: 3px;
@@ -118,26 +118,26 @@
 }
 
 .current-status {
-  margin-top: 20px;
+  margin-top: 25px;
+  margin-left: 35px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-right: 40px;
-  max-height: 95px;
 }
 .fa-sun {
-  font-size: 65px;
+  font-size: 60px;
 }
 .temperature-status {
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Comfortaa", cursive;
   margin-top: 5px;
   text-transform: capitalize;
   text-align: center;
-  margin-bottom: 30px;
+  color: #858585;
 }
 .additional-info {
-  margin-top: 25px;
+  margin-top: 28px;
   font-family: "Comfortaa", cursive;
   font-size: 14px;
   line-height: 1.4;
@@ -145,7 +145,7 @@
   margin-right: 5px;
 }
 .week-forecast {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .weekday {
   font-family: "Share Tech Mono", monospace;
@@ -160,7 +160,7 @@
   font-family: "Comfortaa", cursive;
 }
 .evening-temperature {
-  color: #b1b1b1;
+  color: #858585;
 }
 
 .clicked {
