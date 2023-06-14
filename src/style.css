@@ -173,3 +173,7 @@ body {
   text-align: center;
   margin-top: 10px;
 }
+.link {
+  text-decoration: none;
+  color: #d04b84;
+}
