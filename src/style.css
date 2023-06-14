@@ -118,20 +118,20 @@
 }
 
 .current-status {
-  margin-top: 25px;
+  margin-top: 8px;
   margin-left: 35px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-right: 40px;
 }
-.fa-sun {
-  font-size: 60px;
+.weatherIcon {
+  width: 100px;
+  height: 100px;
 }
 .temperature-status {
   font-size: 14px;
   font-family: "Comfortaa", cursive;
-  margin-top: 5px;
   text-transform: capitalize;
   text-align: center;
   color: #858585;

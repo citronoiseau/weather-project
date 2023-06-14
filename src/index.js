@@ -88,6 +88,9 @@ function getWeather(response) {
   let weather = response.data.condition.description;
   let weatherDescription = document.querySelector(".temperature-status");
   weatherDescription.innerHTML = `${weather}`;
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src", response.data.condition.icon_url);
 }
 
 let apiKey = "84a3odd1fb91cb0984343bb2db506t7f";
