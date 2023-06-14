@@ -28,7 +28,7 @@ body {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
-  margin-left: 45px;
+  margin-left: 5px;
   transition: box-shadow 0.3s ease;
 }
 
