@@ -26,7 +26,7 @@ function showTime(date) {
   }
 
   let todayDate = document.querySelector(".dateCurrent");
-  todayDate.innerHTML = `${timeDate}th of ${timeMonth}, ${timeDay}, ${timeHour}:${timeMinute}`;
+  todayDate.innerHTML = `Lastly updated at: ${timeDate}th of ${timeMonth}, ${timeDay}, ${timeHour}:${timeMinute}`;
   return todayDate;
 }
 showTime(new Date());

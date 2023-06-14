@@ -69,7 +69,7 @@
 .city-temperature-current {
   font-family: "Share Tech Mono", monospace;
   margin-left: 25px;
-
+  max-width: 120px;
   line-height: 1.3;
   margin-top: 17px;
   padding: 0;
@@ -101,48 +101,39 @@
 }
 
 .date-temperature-current {
-  margin-top: 25px;
-  margin-left: 180px;
+  margin-top: 20px;
+  margin-left: 200px;
+  text-align: right;
   font-family: "Comfortaa", cursive;
-  max-height: 95px;
 }
 .dateCurrent {
   font-size: 16px;
-  max-width: 100px;
+  color: #858585;
 }
 .morning-evening-temperature {
-  margin-top: 3px;
   font-size: 14px;
   line-height: 1.4;
   color: #858585;
 }
 
 .current-status {
-  margin-top: 8px;
-  margin-left: 35px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-right: 40px;
+  margin-bottom: 20px;
 }
 .weatherIcon {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
 }
 .temperature-status {
-  font-size: 14px;
+  font-size: 15px;
   font-family: "Comfortaa", cursive;
   text-transform: capitalize;
-  text-align: center;
-  color: #858585;
 }
 .additional-info {
-  margin-top: 28px;
+  margin-top: 33px;
   font-family: "Comfortaa", cursive;
   font-size: 14px;
   line-height: 1.4;
   color: #858585;
-  margin-right: 5px;
 }
 .week-forecast {
   margin-top: 20px;
