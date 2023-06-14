@@ -19,6 +19,7 @@
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
+  margin-left: 10px;
   transition: box-shadow 0.3s ease;
 }
 
@@ -45,7 +46,6 @@
 
 .homeButton {
   display: flex;
-  margin-right: 15px;
   color: #666666;
   padding: 10px;
   border: 1px solid #efefef;
