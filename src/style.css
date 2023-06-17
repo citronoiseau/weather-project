@@ -113,14 +113,14 @@ body {
 }
 
 .date-temperature-current {
-  margin-top: 20px;
-  margin-left: 170px;
+  margin-top: 24px;
   margin-right: 60px;
   text-align: right;
   font-family: "Comfortaa", cursive;
 }
 .dateCurrent {
   font-size: 16px;
+  margin-left: 5px;
   color: #858585;
 }
 .morning-evening-temperature {
@@ -139,7 +139,7 @@ body {
   text-transform: capitalize;
 }
 .additional-info {
-  margin-top: 35px;
+  margin-top: 28px;
   padding: 0;
   margin-right: 5px;
   font-family: "Comfortaa", cursive;
