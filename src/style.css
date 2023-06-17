@@ -97,6 +97,7 @@ body {
 }
 .changeTempLink {
   text-decoration: none;
+  cursor: default;
 }
 .changeTemp {
   font-size: 18px;
@@ -104,11 +105,11 @@ body {
   flex-direction: row;
   margin-left: 6px;
 }
+.changeTemp .active {
+  color: black;
+}
 .borderTemp {
   margin-left: 5px;
-}
-.changeTempF {
-  color: #b1b1b1;
 }
 
 .date-temperature-current {
