@@ -55,7 +55,7 @@ function showForecast(response) {
             <p class="card-text forecast-text">
               ${Math.round(
                 forecastDay.temperature.maximum
-              )}° <span class="evening-temperature">   ${Math.round(
+              )}° <span class="minTemperature">   ${Math.round(
           forecastDay.temperature.minimum
         )}°</span>
             </p>
@@ -78,7 +78,6 @@ function searchCity(event) {
   }
   let apiKey = "84a3odd1fb91cb0984343bb2db506t7f";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${searchInput.value}&key=${apiKey}&units=metric`;
-  // axios.get(`${apiUrl}`).then(getWeather);
   axios.get(apiUrl).then((response) => {
     if (response.data.status === "not_found") {
       alert("This city does not exist 😭");
@@ -107,14 +106,6 @@ function getWeather(response) {
   let city = response.data.city;
   let currentCity = document.querySelector(".cityCurrent");
   currentCity.innerHTML = `${city}`;
-  //will work on tempmax and tempmin when added an API for week forecast
-  // let temperatureMax = Math.round(response.data.main.temp_max);
-  // let tempMax = document.querySelector("#tempMax");
-  // tempMax.innerHTML = `${temperatureMax}°`;
-
-  // let temperatureMin = Math.round(response.data.main.temp_min);
-  // let tempMin = document.querySelector("#tempMin");
-  // tempMin.innerHTML = `${temperatureMin}°`;
 
   let feelsLike = Math.round(response.data.temperature.feels_like);
   let feel = document.querySelector("#feelsLikeTemp");

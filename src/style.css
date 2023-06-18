@@ -56,21 +56,21 @@ body {
 .homeButton {
   display: flex;
   color: #41385c;
+  background-color: #ffffff;
   padding: 10px;
   border: 1px solid #efefef;
   border-radius: 10px;
-  background-color: transparent;
   cursor: pointer;
   font-size: 25px;
-  transition: box-shadow 0.3s ease, background-color 0.2s ease;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease, scale 0.3s ease;
   margin-right: 5px;
 }
 
 .homeButton:hover {
-  box-shadow: 0 4px 8px 0 rgba(148, 148, 148, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(129, 129, 129, 0.2);
 }
 .homeButton:active {
-  background-color: #ee9dc7;
+  background-color: #f6f6f6;
   scale: 95%;
 }
 .main-info {
@@ -80,16 +80,17 @@ body {
   font-family: "Share Tech Mono", monospace;
   margin-left: 60px;
   max-width: 110px;
-  line-height: 1.2;
+  line-height: 1.3;
   margin-top: 17px;
   padding: 0;
 }
 .cityCurrent {
   font-size: 25px;
   word-break: break-word;
+  text-transform: capitalize;
 }
 .temperatureToday {
-  font-size: 55px;
+  font-size: 58px;
   font-weight: 500;
   display: flex;
   margin-left: -3px;
@@ -109,12 +110,6 @@ body {
   margin-left: 5px;
 }
 
-.date-temperature-current {
-  margin-top: 32px;
-  margin-right: 60px;
-  text-align: right;
-  font-family: "Comfortaa", cursive;
-}
 .dateCurrent {
   font-size: 16px;
   margin-left: 5px;
@@ -125,28 +120,34 @@ body {
   color: #858585;
 }
 .current-status {
-  padding: 0;
+  margin: 5px 0 0 25px;
   max-width: 100px;
+  padding: 0;
 }
 .weatherIcon {
-  margin: 18px 5px 0 0;
   padding: 0;
+  display: block;
+  margin: 0 auto;
+  width: 95px;
+  height: 95px;
 }
 .temperature-status {
   font-size: 15px;
+  text-align: center;
+  margin-top: -12px;
   font-family: "Comfortaa", cursive;
-  text-transform: capitalize;
+  color: #858585;
 }
 .additional-info {
-  margin-top: 38px;
+  margin: 18px 0 0 55px;
+  text-align: right;
   padding: 0;
-  margin-left: 7px;
   font-family: "Comfortaa", cursive;
   font-size: 14px;
   color: #858585;
 }
 .week-forecast {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .weekday {
   font-family: "Share Tech Mono", monospace;
@@ -154,13 +155,17 @@ body {
 }
 
 .forecast-text {
-  margin-top: 30px;
   font-family: "Comfortaa", cursive;
 }
 .weekday {
   font-size: 20px;
+  margin-bottom: 0px;
 }
-.evening-temperature {
+.forecastIcon {
+  width: 80px;
+  height: 80px;
+}
+.minTemperature {
   color: #858585;
 }
 
