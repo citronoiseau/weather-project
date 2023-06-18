@@ -62,7 +62,7 @@ body {
   border-radius: 10px;
   cursor: pointer;
   font-size: 25px;
-  transition: box-shadow 0.3s ease, background-color 0.3s ease, scale 0.3s ease;
+  transition: box-shadow 0.3s ease, background-color 0.2s ease, scale 0.3s ease;
   margin-right: 5px;
 }
 
@@ -70,7 +70,7 @@ body {
   box-shadow: 0 4px 8px 0 rgba(129, 129, 129, 0.2);
 }
 .homeButton:active {
-  background-color: #f6f6f6;
+  background-color: #f1efef;
   scale: 95%;
 }
 .main-info {
