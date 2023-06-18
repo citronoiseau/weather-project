@@ -26,12 +26,13 @@ function showTime(date) {
   }
 
   let todayDate = document.querySelector(".dateCurrent");
-  todayDate.innerHTML = `Lastly updated at: ${timeDate}th of ${timeMonth}, ${timeDay}, ${timeHour}:${timeMinute}`;
+  todayDate.innerHTML = `Last updated at: ${timeDate}th of ${timeMonth}, ${timeDay}, ${timeHour}:${timeMinute}`;
   return todayDate;
 }
 showTime(new Date());
 
-function showForecast() {
+function showForecast(response) {
+  console.log(response.data.daily);
   let forecast = document.querySelector("#forecast");
   let forecastHTML = ``;
   let days = ["Tue", "Wed", "Thu"];
@@ -64,15 +65,21 @@ function searchCity(event) {
   let apiKey = "84a3odd1fb91cb0984343bb2db506t7f";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${searchInput.value}&key=${apiKey}&units=metric`;
   // axios.get(`${apiUrl}`).then(getWeather);
-  axios.get(`${apiUrl}`).then((response) => {
+  axios.get(apiUrl).then((response) => {
     if (response.data.status === "not_found") {
       alert("This city does not exist 😭");
       return false;
     } else {
       getWeather(response);
-      cityCurrent.innerHTML = `${searchInput.value.trim()}`;
+      cityCurrent.innerHTML = searchInput.value.trim();
     }
   });
+}
+
+function getForecast(city) {
+  let apiKey = "84a3odd1fb91cb0984343bb2db506t7f";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
 }
 
 function getWeather(response) {
@@ -113,6 +120,8 @@ function getWeather(response) {
 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src", response.data.condition.icon_url);
+
+  getForecast(response.data.city);
 }
 
 let apiKey = "84a3odd1fb91cb0984343bb2db506t7f";
@@ -161,5 +170,3 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
-
-showForecast();
