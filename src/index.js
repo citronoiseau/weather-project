@@ -31,24 +31,38 @@ function showTime(date) {
 }
 showTime(new Date());
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function showForecast(response) {
-  console.log(response.data.daily);
+  let forecastDaily = response.data.daily;
   let forecast = document.querySelector("#forecast");
   let forecastHTML = ``;
-  let days = ["Tue", "Wed", "Thu"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="card text-center mb-3 border-0">
+  forecastDaily.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="card text-center mb-3 border-0">
           <div class="card-body">
-            <h5 class="card-title weekday">${day}</h5>
-            <i class="fa-solid fa-sun forecast-icon" style="color: #fecc16"></i>
+            <h5 class="card-title weekday">${formatDay(forecastDay.time)}</h5>
+             <img src="${
+               forecastDay.condition.icon_url
+             }" alt="Icon" class="forecastIcon" />
             <p class="card-text forecast-text">
-              26° <span class="evening-temperature">16°</span>
+              ${Math.round(
+                forecastDay.temperature.maximum
+              )}° <span class="evening-temperature">   ${Math.round(
+          forecastDay.temperature.minimum
+        )}°</span>
             </p>
           </div>
         </div>`;
-    forecast.innerHTML = forecastHTML;
+      forecast.innerHTML = forecastHTML;
+    }
   });
 }
 
