@@ -31,6 +31,26 @@ function showTime(date) {
 }
 showTime(new Date());
 
+function showForecast() {
+  let forecast = document.querySelector("#forecast");
+  let forecastHTML = ``;
+  let days = ["Tue", "Wed", "Thu"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="card text-center mb-3 border-0">
+          <div class="card-body">
+            <h5 class="card-title weekday">${day}</h5>
+            <i class="fa-solid fa-sun forecast-icon" style="color: #fecc16"></i>
+            <p class="card-text forecast-text">
+              26° <span class="evening-temperature">16°</span>
+            </p>
+          </div>
+        </div>`;
+    forecast.innerHTML = forecastHTML;
+  });
+}
+
 function searchCity(event) {
   event.preventDefault();
 
@@ -141,3 +161,5 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
+
+showForecast();
