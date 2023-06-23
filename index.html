@@ -48,6 +48,8 @@
           <div class="cityCurrent"></div>
           <div class="temperatureToday">
             <span id="temperatureValue"></span>
+            <span class="temp-celcius" id="temperatureValueC"></span>
+            <span class="temp-fahrenheit invisible" id="temperatureValueF"></span>
             <div class="changeTemp">
               <div>
                 <a href="#" id="celsius-link" class="changeTempLink active"
@@ -68,15 +70,15 @@
 
         <div class="col col-lg-6 additional-info">
           <div class="feelsLike">
-            feels like: <span id="feelsLikeTemp"> </span>
+            feels like: <span class="temp-celcius" id="feelsLikeTempC"></span><span class="temp-fahrenheit invisible" id="feelsLikeTempF"></span>
           </div>
           <div class="humidity">humidity: <span id="humidity"></span></div>
           <div class="wind">wind: <span id="wind"></span>km/h</div>
         </div>
       </div>
 
-      <div class="card-group week-forecast" id="forecast"></div>
-      <div class="card-group week-forecast" id="forecast-fahrenheit"></div>
+      <div class="card-group week-forecast temp-celcius" id="forecast"></div>
+      <div class="card-group week-forecast temp-fahrenheit invisible" id="forecast-fahrenheit"></div>
       <div class="dateCurrent"></div>
     </div>
     <p class="whoCoded">
