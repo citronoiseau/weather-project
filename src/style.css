@@ -139,16 +139,15 @@ body {
   color: #858585;
 }
 .additional-info {
-  margin: 18px 0 0 55px;
+  margin: 18px 0 0 340px;
+  max-width: 100px;
   text-align: right;
   padding: 0;
   font-family: "Comfortaa", cursive;
   font-size: 14px;
   color: #858585;
 }
-.week-forecast {
-  margin-top: 20px;
-}
+
 .weekday {
   font-family: "Share Tech Mono", monospace;
   font-weight: 500;
@@ -180,4 +179,12 @@ body {
 .link {
   text-decoration: none;
   color: #d04b84;
+}
+
+.invisible {
+  display: none;
+}
+
+.card {
+  margin-top: 5px;
 }

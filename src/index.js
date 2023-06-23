@@ -46,7 +46,7 @@ function showForecast(response) {
     if (index < 5) {
       forecastHTML =
         forecastHTML +
-        `<div class="card text-center mb-3 border-0">
+        `<div class="card text-center mb-3 border-0" id="celcius">
           <div class="card-body">
             <h5 class="card-title weekday">${formatDay(forecastDay.time)}</h5>
              <img src="${
@@ -64,6 +64,50 @@ function showForecast(response) {
       forecast.innerHTML = forecastHTML;
     }
   });
+  let forecastDailyF = response.data.daily;
+  let forecastF = document.querySelector("#forecast-fahrenheit");
+  let forecastHTMLF = ``;
+  forecastDailyF.forEach(function (forecastDayF, index) {
+    if (index < 5) {
+      forecastHTMLF =
+        forecastHTMLF +
+        `<div class="card text-center mb-3 border-0" id="celcius">
+          <div class="card-body">
+            <h5 class="card-title weekday">${formatDay(forecastDayF.time)}</h5>
+             <img src="${
+               forecastDayF.condition.icon_url
+             }" alt="Icon" class="forecastIcon" />
+            <p class="card-text forecast-text">
+              ${Math.round(
+                (forecastDayF.temperature.maximum * 9) / 5 + 32
+              )}° <span class="minTemperature">    ${Math.round(
+          (forecastDayF.temperature.minimum * 9) / 5 + 32
+        )}°</span>
+            </p>
+          </div>
+        </div>`;
+      forecastF.innerHTML = forecastHTMLF;
+    }
+  });
+
+  function showFahrenheitTemp(event) {
+    event.preventDefault();
+    forecast.classList.add("invisible");
+    forecastF.classList.remove("invisible");
+  }
+
+  function showCelsiusTemp(event) {
+    event.preventDefault();
+    forecast.classList.remove("invisible");
+    forecastF.classList.add("invisible");
+  }
+  let fahrenheitLink = document.querySelector("#fahrenheit-link");
+  fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+  let celsiusLink = document.querySelector("#celsius-link");
+  celsiusLink.addEventListener("click", showCelsiusTemp);
+
+  showCelsiusTemp(event);
 }
 
 function searchCity(event) {
