@@ -200,6 +200,9 @@ function showFahrenheitTemp(event) {
   fahrenheitLink.classList.add("active");
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   temperature.innerHTML = Math.round(fahrenheitTemp);
+
+  let feelslike = document.querySelector("#feelsLikeTemp");
+  feelslike.innerHTML = `${Math.round(fahrenheitTemp)}°`;
 }
 
 function showCelsiusTemp(event) {
@@ -208,6 +211,9 @@ function showCelsiusTemp(event) {
   fahrenheitLink.classList.remove("active");
   let temperature = document.querySelector("#temperatureValue");
   temperature.innerHTML = Math.round(celsiusTemp);
+
+  let feelslike = document.querySelector("#feelsLikeTemp");
+  feelslike.innerHTML = `${Math.round(celsiusTemp)}° `;
 }
 let celsiusTemp = null;
 
